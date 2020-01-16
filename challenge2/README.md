@@ -4,7 +4,7 @@
 Raw data is useless to merchants. So Analyzed Data Result about 10 million/hour. 240 million/day.
 3. Assume Merchants doing 12 times query per day if office hour 8 hours. about  1.4K QPS
 4. Assume one event log need 1KB, 10billion event raw data need 10TB storage per/day. 
-   We also assume analyzed result 1KB zie, 240 million analyzed result need about 230GB storage per/day.
+   We also assume analyzed result 1KB szie, 240 million analyzed result need about 230GB storage per/day.
 
 
 ### System Architecture
