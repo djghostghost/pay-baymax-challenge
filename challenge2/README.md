@@ -8,7 +8,7 @@ Raw data is useless to merchants. So Analyzed Data Result about 10 million/hour.
 
 
 ### System Architecture
-![avatar](./images/architecture.jpg)
+![avatar](./images/architecture.png)
 
 ### Basic System Design
 
@@ -47,12 +47,12 @@ Possible candidates  are AWS S3 Glacier
 #### 6. Event Log Analyze Engine
 Used to analyze event log. Statistical data hourly, daily, monthly and Annually.
 
-##### 6.1 In-Time Analyze 
-```In-Time Analyze``` consume the stream from MQ and statistical data hourly. after analyzing data and send data 
-to Analyzed Result Distributed Distribution System.
+##### 6.1 RealTime Analyze 
+```RealTime Analyze System``` consume the stream from MQ and statistical data hourly. after analyzing data and send data 
+to Analyzed Result Distributed Distribution System. Possible candidates are Apache Flink, Apache Spark.
 
 ##### 6.2 Behind-Of-Time Analyze
-```Behind-Of-Time Analyze``` take data from Event Log Data WareHouse or Event Log analyzed result to statistics daily, 
+```Behind-Of-Time Analyze System``` take data from Event Log Data WareHouse or Event Log analyzed result to statistics daily, 
 monthly, annually. and pub analyzed result to Analyzed Result Distributed Distribution System.
 
 
