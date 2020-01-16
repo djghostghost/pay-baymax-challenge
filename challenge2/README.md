@@ -75,7 +75,7 @@ depends system load status . And for security, the api would be exposed by load 
 
 #### 11. Analyzed Result Frontend System
 ```Analyzed Result Fontend System``` provide web view for merchants. and communicate with backed system throw 
-backend system load balancer. In order to speed up web load speed. we can choose Aws Cloudfront or other cdn 
-managed service.
+backend system load balancer. In order to speed up web load speed. we can choose Aws Cloudfront, CloudFlare or other cdn 
+managed CDN service.
 
 
