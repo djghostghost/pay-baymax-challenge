@@ -19,7 +19,7 @@ Amazon Route53 it's possible to return ip address of data center closest to the 
 
 #### 2. Event Log Collector Backend System
 ```Event Log Collector Backend System``` is used to receive events posted by clients. And send the event log
-to the MQ for future processing. Backend System may be need to process event log or do authorization using the data from
+to the ```Event Log Distributed Distribution System``` for future processing. Backend System may be need to process event log or do authorization using the data from
  merchant's or system configuration databases. Redis or Memcache can be used to cache this data to speed
  the processing.  If there are not complex queries, NoSQL like MongoDB or AWS DynamoDB also works.
  
@@ -49,7 +49,7 @@ Possible candidates  are AWS S3 Glacier
 Used to analyze event log. Statistical data hourly, daily, monthly and Annually.
 
 ##### 6.1 RealTime Analyze 
-```RealTime Analyze System``` consume the stream from MQ and statistical data hourly. after analyzing data and send data 
+```RealTime Analyze System``` consume the stream from ```Event Log Distributed Distribution System``` and statistical data hourly. after analyzing data and send data 
 to Analyzed Result Distributed Distribution System. Possible candidates are Apache Flink, Apache Spark.
 
 ##### 6.2 Behind-Of-Time Analyze
