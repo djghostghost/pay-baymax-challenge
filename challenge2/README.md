@@ -34,9 +34,9 @@ to the ```Event Log Distributed Distribution System``` for future processing. Ba
  ```Event Log Distributed Distribution System``` is used to distribute event logs to downstream service.
  Possible candidates are Apache Kafka, Aws Kinesis, Rabbit MQ among others MQ.
   
- #### 4. Event Log Archiver
- ```Event Log Archiver``` consumer event log from Event Log Distributed Distribution System. And save data to Event Log Data warehouse. 
- Possible candidates are AWS EMR.
+ #### 4. Event Log Pre-processing
+ ```Event Log Pre-processing``` consumer event log from Event Log Distributed Distribution System. Compress or format event lod
+And save data to Event Log Data warehouse. Possible candidates are AWS EMR.
 
 #### 5. Event Log Data Warehouse 
 ```Event Log Data Warehouse``` should be writing efficient. Possible candidates are amazon s3 + redshift, Hadoop.
