@@ -24,7 +24,7 @@ to the ```Event Log Distributed Distribution System``` for future processing. Ba
  the processing.  If there are not complex queries, NoSQL like MongoDB or AWS DynamoDB also works.
  
  In order to improve system availability. The instances are deployed in different available zone, and can 
- auto scale up/down depends on instance cpu or memory loads.
+ auto scale up/down according to instance cpu/memory loads.
  
  About DB, If we have to choose RDS like MySQL,  Databases was designed in ```active/standby``` mode. 
  when ```active``` database failed down and system can change to standby database quickly.
@@ -71,8 +71,8 @@ we have to choose RDS like MySql and consider database/table partition.
 
 #### 10. Analyzed Result Backend System
 ```Analyzed Result BackEnd System``` provide api for merchants to search. like ``` Event Log Collector Backend System```
-to improve system availability compute instance will be deployed in multi available zones, and can be scaled up/down 
-depends system load status . And for security, the api would be exposed by load balancer.  
+, in order to improve system availability, compute instance will be deployed in multi available zones, and can auto to 
+scale up/down according to instance cpu/memory load status. And for security, the api would be exposed by load balancer.  
 
 #### 11. Analyzed Result Frontend System
 ```Analyzed Result Fontend System``` provide web view for merchants. and communicate with backed system throw 
