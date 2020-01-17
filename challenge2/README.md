@@ -14,19 +14,20 @@ Raw data is useless to merchants. So Analyzed Data Result about 10 million/hour.
 
 #### 1. DNS && Loader Balancer
 
-We can have multiple Event Log Collector Backend  Systems in different region. By using service like 
+We may have multiple Event Log Collector Backend Systems in different region. By using service like 
 Amazon Route53 it's possible to return ip address of data center closest to the user's geo location.
 
 #### 2. Event Log Collector Backend System
 ```Event Log Collector Backend System``` is used to receive events posted by clients. And send the event log
-to the MQ for future processing. Backend System may be need to process event log by using the data from
+to the MQ for future processing. Backend System may be need to process event log or do authorization using the data from
  merchant's or system configuration databases. Redis or Memcache can be used to cache this data to speed
- the processing.
+ the processing.  If there are not complex queries, NoSQL like MongoDB or AWS DynamoDB also works.
  
  In order to improve system availability. The instances are deployed in different available zone, and can 
- auto scale up/down depends on instance cpu or memory loads.If there is no complex Databases was designed in 
- ```active/standby``` mode. when ```active``` database failed down and system can
- change to standby database quickly.
+ auto scale up/down depends on instance cpu or memory loads.
+ 
+ About DB, If we have to choose RDS like MySQL,  Databases was designed in ```active/standby``` mode. 
+ when ```active``` database failed down and system can change to standby database quickly.
  
  
  #### 3. Event Log Distributed Distribution System
@@ -75,7 +76,7 @@ depends system load status . And for security, the api would be exposed by load 
 
 #### 11. Analyzed Result Frontend System
 ```Analyzed Result Fontend System``` provide web view for merchants. and communicate with backed system throw 
-backend system load balancer. In order to speed up web load speed. we can choose Aws Cloudfront, CloudFlare or other cdn 
+backend system load balancer. In order to speed up web load speed. we can choose Aws Cloudfront, CloudFlare or other  
 managed CDN service.
 
 

@@ -13,10 +13,15 @@ public final class ImmutableQueue<T> {
      */
     private Node<T> last;
 
+    /**
+     * Construct Empty Immutable Queue
+     */
     public ImmutableQueue() {
     }
 
     /**
+     * Construct Immutable Queue just one element T
+     *
      * @param t Immutable Queue Element
      */
     public ImmutableQueue(T t) {
@@ -25,7 +30,7 @@ public final class ImmutableQueue<T> {
     }
 
     /**
-     * Generate new Immutable Queue based original Immutable iq
+     * Construct new Immutable Queue based original Immutable iq
      *
      * @param iq original immutable queue
      */
@@ -105,7 +110,11 @@ public final class ImmutableQueue<T> {
         return first.ele;
     }
 
-
+    /**
+     * Retrieves, but does not remove, the tail (last element) of this queue.
+     *
+     * @return T
+     */
     public T tail() {
         if (isEmpty()) {
             throw new NoSuchElementException();
